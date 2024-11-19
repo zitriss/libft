@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:06:44 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/09 16:28:29 by tlize            ###   ########.fr       */
+/*   Updated: 2024/11/19 17:07:09 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	dest_char = (char *)dest;
 	src_char = (char *)src;
-	if (!size || dest == src)
+	if (!n || dest == src)
 		return (dest);
 	while (i < n)
 	{

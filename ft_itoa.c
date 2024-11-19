@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:30:18 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/13 16:41:12 by tlize            ###   ########.fr       */
+/*   Updated: 2024/11/19 16:47:16 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,57 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_strcpy(char *dst, const char *src)
+static int	get_num_length(int n)
 {
-	size_t	i;
+	int	len;
 
-	i = 0;
-	while (src[i] != '\0')
+	len = 0;
+	if (n < 0)
 	{
-		dst[i] = src[i];
-		i ++;
-		dst[i] = '\0';
+		n = -n;
+		len ++;
 	}
-	return (dst);
+	while (n > 0)
+	{
+		n /= 10;
+		len ++;
+	}
+	return (len);
+}
+
+char	*ft_hawktoa(char *str, int n, int len, unsigned int num)
+{
+	if (n < 0)
+	{
+		str[0] = '-';
+		num = -n;
+	}
+	else
+		num = n;
+	while (num >= 10)
+	{
+		str[-- len] = num % 10 + '0';
+		num /= 10;
+	}
+	str[-- len] = num + '0';
+	return (str);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
+	int				len;
+	char			*str;
 
-	str = (char *) malloc(sizeof(char) * 2);
+	if (n == -2147483648)
+		return ("-2147483648");
+	if (n == 0)
+		return ("0");
+	len = get_num_length(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(str, "-2147483648"));
-	if (n < 0)
-	{
-		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
-	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else
-	{
-		str[0] = n + '0';
-		str[1] = '\0';
-	}
+	str[len] = '\0';
+	ft_hawktoa(str, n, len, 0);
 	return (str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:56:51 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/09 17:41:53 by tlize            ###   ########.fr       */
+/*   Updated: 2024/11/19 17:07:11 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		i = n;
 		while (i > 0)
 		{
-			i --;
+			i--;
 			dest_char[i] = src_char[i];
 		}
 	}
 	else
 	{
-		i = 0;
-		while (i < n)
-		{
+		i = -1;
+		while (++i < n)
 			dest_char[i] = src_char[i];
-			i++;
-		}
 	}
 	return (dest);
 }

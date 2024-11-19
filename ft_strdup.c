@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:57:51 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/12 13:22:44 by tlize            ###   ########.fr       */
+/*   Updated: 2024/11/19 17:07:18 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strdup(const char *s)
 
 	str = (char *)s;
 	copy = (char *) malloc((ft_strlen(str) + 1) * sizeof(char));
+	if (copy == NULL)
+		return (NULL);
 	ft_strcopy(str, copy);
 	return (copy);
 }
