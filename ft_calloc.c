@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:39:05 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/12 13:12:47 by tlize            ###   ########.fr       */
+/*   Updated: 2024/11/19 17:59:28 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,13 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*pt;
 
-	if (nmemb < 1 || size < 1)
+	if (nmemb > __SIZE_MAX__ / size)
 		return (0);
+	if (nmemb < 1 && size < 1)
+	{
+		nmemb = 1;
+		size = 1;
+	}
 	pt = malloc(nmemb * size);
 	if (!pt)
 		return (pt);

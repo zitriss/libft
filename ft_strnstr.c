@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:38:03 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/12 15:24:57 by tlize            ###   ########.fr       */
+/*   Updated: 2024/11/19 17:54:16 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnstr(char *big, char *little, size_t len)
 	i = 0;
 	if (!little[j])
 		return (&big[i]);
-	while (big[i] && i < len)
+	while (big[i] && little[j] && i < len)
 	{
 		if (big[i] == little[j])
 			j ++;

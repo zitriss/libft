@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:30:18 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/19 17:39:19 by tlize            ###   ########.fr       */
+/*   Updated: 2024/11/19 17:52:18 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ static char	*hawktoa(char *str, int n, int len, unsigned int num)
 	return (str);
 }
 
-static char	*skibiditoa()
+static char	*skibiditoa(void)
 {
-	char *str;
+	char	*str;
 
 	str = (char *)malloc(sizeof(char) * 12);
 	str = "-2147483648";
