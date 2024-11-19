@@ -24,6 +24,8 @@ char	*ft_strchr(char *s, int c)
 			return (&s[i]);
 		i ++;
 	}
+	if (c == '\0')
+		return (&s[i]);
 	return (0);
 }
 
