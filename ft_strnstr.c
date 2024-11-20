@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:38:03 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/19 18:41:35 by tlize            ###   ########.fr       */
+/*   Updated: 2024/11/20 14:34:46 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ char	*ft_strnstr(char *big, char *little, size_t len)
 		else
 			j = 0;
 		if (!little[j])
+		{
 			if (i - j + 1 <= len)
 				return (&big[i - j + 1]);
 			else
 				return (0);
+		}
 		i++;
 	}
 	return (0);
