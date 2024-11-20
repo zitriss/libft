@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:30:18 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/20 14:30:25 by tlize            ###   ########.fr       */
+/*   Updated: 2024/11/20 14:43:38 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,20 @@ static char	*skibiditoa(void)
 	char	*str;
 
 	str = (char *)malloc(sizeof(char) * 12);
-	str = "-2147483648";
+	if (!str)
+		return (NULL);
+	str[0] = '-';
+	str[1] = '2';
+	str[2] = '1';
+	str[3] = '4';
+	str[4] = '7';
+	str[5] = '4';
+	str[6] = '8';
+	str[7] = '3';
+	str[8] = '6';
+	str[9] = '4';
+	str[10] = '8';
+	str[11] = '\0';
 	return (str);
 }
 
